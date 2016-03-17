@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="480.0" minWidth="800.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-base: #fff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.tirex.marbya.editor.main.EditorController">
+    <children>
+        <MenuBar layoutX="7.0" layoutY="-35.0" prefHeight="0.0" prefWidth="640.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="Plik">
+                    <items>
+                        <MenuItem fx:id="newMapItem" mnemonicParsing="false" text="Nowa Mapa">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="N" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                            </accelerator>
+                        </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="openMapItem" mnemonicParsing="false" text="Otwórz">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="O" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                            </accelerator>
+                        </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="saveMapItem" mnemonicParsing="false" text="Zapisz">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="saveMapAsItem" mnemonicParsing="false" text="Zapisz jako" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Narzędzia">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="TEST" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane prefHeight="373.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+            <children>
+                <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="ALWAYS" prefHeight="355.0" prefWidth="359.0" style="-fx-background: #B2B2B2;" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="291.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+                    <content>
+                        <AnchorPane fx:id="drawMap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="512.0" style="-fx-background-color: #000;" />
+                    </content>
+                </ScrollPane>
+                <Accordion fx:id="helperList" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="271.0" style="-fx-border-width: 1px; -fx-border-color: #B2B2B2; -fx-border-style: dashed; -fx-background-color: #B2B2B2;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0">
+                    <panes>
+                        <TitledPane fx:id="helperProfile" animated="false" text="Profile">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                     <tooltip>
+                        <Tooltip text="Wybierz swój profil" />
+                     </tooltip>
+                     <content>
+                        <ListView fx:id="profileList" prefHeight="611.0" prefWidth="268.0" style=".list-cell: even { -fx-background-color: #000; }" />
+                     </content>
+                        </TitledPane>
+                    </panes>
+                </Accordion>
+                <Button fx:id="backButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="36.0" prefWidth="271.0" style="-fx-background-insets: 0px; -fx-border-color: #BABABA; -fx-border-width: 1px; -fx-border-radius: 5px;" text="Cofnij" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <tooltip>
+                  <Tooltip text="Cofnij do wyboru profili" />
+               </tooltip></Button>
+            <ScrollPane fx:id="scrollProfile" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" minWidth="-Infinity" prefHeight="635.0" prefWidth="271.0" vbarPolicy="ALWAYS" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0">
+              <content>
+                <AnchorPane fx:id="drawProfile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="256.0" />
+              </content>
+            </ScrollPane>
+            <Label fx:id="saveAlert" layoutX="1238.0" layoutY="677.0" text="Zapisano" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="10.0" />
+            <ToolBar fx:id="mainToolbar" layoutX="291.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="36.0" prefWidth="979.0" AnchorPane.leftAnchor="291.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
