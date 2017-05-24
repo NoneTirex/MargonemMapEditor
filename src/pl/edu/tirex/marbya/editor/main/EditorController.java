@@ -305,9 +305,7 @@ public class EditorController implements Initializable
                 EditorController.this.lastBrush = btn;
                 try {
                     MarbyaEditor.getMarbyaMap().setBrush(brushClass.newInstance());
-                } catch (InstantiationException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
+                } catch (InstantiationException | IllegalAccessException e) {
                     e.printStackTrace();
                 }
             }

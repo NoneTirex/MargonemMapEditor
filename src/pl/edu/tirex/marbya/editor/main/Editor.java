@@ -28,10 +28,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -108,17 +105,14 @@ public class Editor extends Application
             f.mkdir();
             return list;
         }
-        for (String file : f.list(new FilenameFilter()
+        Collections.addAll(list, f.list(new FilenameFilter()
         {
             @Override
             public boolean accept(File dir, String name)
             {
                 return new File(dir, name).isDirectory();
             }
-        }))
-        {
-            list.add(file);
-        }
+        }));
         return list;
     }
 
